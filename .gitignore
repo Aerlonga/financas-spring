@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### IntelliJ Terminal History ###
+*.history
+**/terminal/history/*
