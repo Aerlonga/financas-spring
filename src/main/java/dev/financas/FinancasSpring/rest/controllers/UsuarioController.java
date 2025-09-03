@@ -1,4 +1,4 @@
-package dev.financas.FinancasSpring.controllers;
+package dev.financas.FinancasSpring.rest.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
