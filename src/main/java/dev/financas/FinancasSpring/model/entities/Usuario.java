@@ -8,7 +8,6 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-
 @Getter
 @Setter
 @Entity
@@ -33,10 +32,12 @@ public class Usuario {
     @Column(name = "senha_hash", nullable = false, length = 255)
     private String senhaHash;
 
+    @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false, length = 10)
     private Status status = Status.ATIVO;
 
+    @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false, length = 10)
     private Role role = Role.USER;
@@ -49,10 +50,12 @@ public class Usuario {
     @Column(name = "atualizado_em", nullable = false)
     private OffsetDateTime atualizadoEm;
 
+    public enum Status {
+        ATIVO, INATIVO, BLOQUEADO
+    }
 
-    public enum Status {ATIVO, INATIVO, BLOQUEADO}
-
-    public enum Role {USER, ADMIN}
-
+    public enum Role {
+        USER, ADMIN
+    }
 
 }

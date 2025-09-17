@@ -1,15 +1,35 @@
 package dev.financas.FinancasSpring.rest.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import dev.financas.FinancasSpring.rest.dto.UsuarioCreateDTO;
+import dev.financas.FinancasSpring.rest.dto.UsuarioResponseDTO;
+import dev.financas.FinancasSpring.rest.mapper.UsuarioMapper;
+import dev.financas.FinancasSpring.services.UsuarioService;
+import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
-    @GetMapping("/usuario")
+    private final UsuarioService usuarioService;
+    private final UsuarioMapper usuarioMapper;
+
+    public UsuarioController(UsuarioService usuarioService, UsuarioMapper usuarioMapper) {
+        this.usuarioService = usuarioService;
+        this.usuarioMapper = usuarioMapper;
+    }
+
+    @GetMapping("/teste")
     public String primeiraRota() {
         return "Testando rota usuário!";
+    }
+    
+    @PostMapping
+    public ResponseEntity<UsuarioResponseDTO> criar(@Valid @RequestBody UsuarioCreateDTO dto) {
+        var usuario = usuarioMapper.toEntity(dto);
+        var salvo = usuarioService.save(usuario);
+        var response = usuarioMapper.toResponseDTO(salvo);
+        return ResponseEntity.ok(response);
     }
 }

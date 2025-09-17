@@ -18,7 +18,7 @@ public class UsuarioCreateDTO {
 
     @NotBlank(message = "O nome é obrigatório!")
     @Size(min = 5, max = 100, message = "O nome deve ter entre 5 e 100 caracteres")
-    private String NomeCompleto;
+    private String nomeCompleto;
 
     @NotBlank(message = "O e-mail é obrigatório")
     @Email(message = "E-mail inválido")
