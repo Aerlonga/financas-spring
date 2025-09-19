@@ -19,6 +19,10 @@ target/
 *.iml
 *.ipr
 
+### IntelliJ Terminal History ###
+*.history
+**/terminal/history/*
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
