@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -17,5 +17,10 @@ public class UsuarioResponseDTO {
     private String email;
     private String status;
     private String role;
-    private OffsetDateTime criadoEm;
+
+    private LocalDateTime criadoEm;
+    private String criadoPor;
+
+    private LocalDateTime atualizadoEm;
+    private String atualizadoPor;
 }

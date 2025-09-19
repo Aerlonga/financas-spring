@@ -1,6 +1,8 @@
 package dev.financas.FinancasSpring.services;
 
 import dev.financas.FinancasSpring.model.repository.UsuarioRepository;
+import dev.financas.FinancasSpring.rest.dto.UsuarioUpdateDTO;
+import dev.financas.FinancasSpring.rest.mapper.UsuarioMapper;
 import dev.financas.FinancasSpring.model.entities.Usuario;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +13,11 @@ import java.util.Optional;
 
 public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
+    private final UsuarioMapper usuarioMapper;
 
-    public UsuarioService(UsuarioRepository usuarioRepository) {
+    public UsuarioService(UsuarioRepository usuarioRepository, UsuarioMapper usuarioMapper) {
         this.usuarioRepository = usuarioRepository;
+        this.usuarioMapper = usuarioMapper;
     }
 
     public List<Usuario> findAll() {
@@ -32,13 +36,9 @@ public class UsuarioService {
         usuarioRepository.deleteById(id);
     }
 
-    public Optional<Usuario> atualizar(Long id, Usuario usuarioAtualizado) {
+    public Optional<Usuario> atualizar(Long id, UsuarioUpdateDTO dto) {
         return usuarioRepository.findById(id).map(usuario -> {
-            usuario.setNomeCompleto(usuarioAtualizado.getNomeCompleto());
-            usuario.setEmail(usuarioAtualizado.getEmail());
-            usuario.setSenhaHash(usuarioAtualizado.getSenhaHash());
-            usuario.setStatus(usuarioAtualizado.getStatus());
-            usuario.setRole(usuarioAtualizado.getRole());
+            usuarioMapper.updateEntity(usuario, dto);
             return usuarioRepository.save(usuario);
         });
     }

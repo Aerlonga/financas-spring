@@ -20,12 +20,15 @@ services:
     working_dir: /app
     volumes:
       - .:/app
-      - ~/.m2:/root/.m2   # cache local do maven
+      - ~/.m2:/root/.m2
     command: mvn spring-boot:run
     ports:
       - "8080:8080"
     depends_on:
       - postgres
+    environment:
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRATION=${JWT_EXPIRATION}
 
 volumes:
   pgdata:

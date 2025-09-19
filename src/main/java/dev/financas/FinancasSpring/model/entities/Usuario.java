@@ -2,11 +2,17 @@ package dev.financas.FinancasSpring.model.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,8 +22,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Builder
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "usuarios")
-
-public class Usuario {
+public class Usuario implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,18 +49,47 @@ public class Usuario {
 
     @CreatedDate
     @Column(name = "criado_em", nullable = false, updatable = false)
-    private OffsetDateTime criadoEm;
+    private LocalDateTime criadoEm;
 
     @LastModifiedDate
     @Column(name = "atualizado_em", nullable = false)
-    private OffsetDateTime atualizadoEm;
+    private LocalDateTime atualizadoEm;
 
-    public enum Status {
-        ATIVO, INATIVO, BLOQUEADO
+    @CreatedBy
+    @Column(name = "criado_por", updatable = false)
+    private String criadoPor;
+
+    @LastModifiedBy
+    @Column(name = "atualizado_por")
+    private String atualizadoPor;
+
+    public enum Status { ATIVO, INATIVO, BLOQUEADO }
+    public enum Role { USER, ADMIN }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(() -> "ROLE_" + role.name());
     }
 
-    public enum Role {
-        USER, ADMIN
+    @Override
+    public String getPassword() {
+        return senhaHash;
     }
 
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() { return true; }
+
+    @Override
+    public boolean isAccountNonLocked() { return status != Status.BLOQUEADO; }
+
+    @Override
+    public boolean isCredentialsNonExpired() { return true; }
+
+    @Override
+    public boolean isEnabled() { return status == Status.ATIVO; }
 }
