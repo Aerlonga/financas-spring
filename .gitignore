@@ -31,7 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
-.env/
+
+# Arquivo de variáveis de ambiente
+.env
 
 ### IntelliJ Terminal History ###
 *.history
