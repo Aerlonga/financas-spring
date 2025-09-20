@@ -20,7 +20,7 @@ public class JwtUtil {
     private final long expirationMs;
 
     public JwtUtil(
-            @Value("${jwt.secret}") String secret,
+            @Value("${JWT_SECRET}") String secret,
             @Value("${jwt.expiration}") long expirationMs) {
         if (secret.length() < 32) {
             throw new IllegalArgumentException("A chave JWT deve ter pelo menos 32 caracteres");

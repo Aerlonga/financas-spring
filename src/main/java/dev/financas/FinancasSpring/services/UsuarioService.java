@@ -1,5 +1,7 @@
 package dev.financas.FinancasSpring.services;
 
+import dev.financas.FinancasSpring.exceptions.BusinessException;
+import dev.financas.FinancasSpring.exceptions.ResourceNotFoundException;
 import dev.financas.FinancasSpring.model.repository.UsuarioRepository;
 import dev.financas.FinancasSpring.rest.dto.UsuarioUpdateDTO;
 import dev.financas.FinancasSpring.rest.mapper.UsuarioMapper;
@@ -7,7 +9,7 @@ import dev.financas.FinancasSpring.model.entities.Usuario;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+// import java.util.Optional;
 
 @Service
 
@@ -24,23 +26,33 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
-    public Optional<Usuario> findById(Long id) {
-        return usuarioRepository.findById(id);
+    public Usuario findById(Long id) {
+        return usuarioRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado com o ID: " + id));
     }
 
     public Usuario save(Usuario usuario) {
+        if (usuarioRepository.existsByEmail(usuario.getEmail())) {
+            throw new BusinessException("O e-mail informado já está em uso.");
+        }
         return usuarioRepository.save(usuario);
     }
 
     public void deleteById(Long id) {
+        if (!usuarioRepository.existsById(id)) {
+            throw new ResourceNotFoundException("Usuário não encontrado com o ID: " + id);
+        }
         usuarioRepository.deleteById(id);
     }
 
-    public Optional<Usuario> atualizar(Long id, UsuarioUpdateDTO dto) {
-        return usuarioRepository.findById(id).map(usuario -> {
-            usuarioMapper.updateEntity(usuario, dto);
-            return usuarioRepository.save(usuario);
-        });
+    public Usuario atualizar(Long id, UsuarioUpdateDTO dto) {
+        // findById já lança ResourceNotFoundException se o usuário não existir
+        Usuario usuario = this.findById(id);
+
+        // A validação de e-mail único na atualização é tratada pela anotação
+        // @EmailUnicoUpdate
+        usuarioMapper.updateEntity(usuario, dto);
+        return usuarioRepository.save(usuario);
     }
 
 }
