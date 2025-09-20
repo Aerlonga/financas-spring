@@ -23,7 +23,7 @@ public class UsuarioMapper {
                 .nomeCompleto(dto.getNomeCompleto())
                 .email(dto.getEmail())
                 .senhaHash(passwordEncoder.encode(dto.getSenha()))
-                .role(dto.getRole() != null ? dto.getRole() : Usuario.Role.USER) // 👈 aqui!
+                .role(dto.getRole())
                 .build();
     }
 

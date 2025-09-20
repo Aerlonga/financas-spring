@@ -35,6 +35,13 @@ public class UsuarioService {
         if (usuarioRepository.existsByEmail(usuario.getEmail())) {
             throw new BusinessException("O e-mail informado já está em uso.");
         }
+        // Para a criação de um novo usuário, ele mesmo é o criador e o atualizador
+        // inicial.
+        // O AuditorAware não funciona aqui pois o endpoint é público e não há usuário
+        // logado.
+        usuario.setCriadoPor(usuario.getEmail());
+        usuario.setAtualizadoPor(usuario.getEmail());
+
         return usuarioRepository.save(usuario);
     }
 
