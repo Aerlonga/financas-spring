@@ -10,6 +10,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.ArrayList;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -43,16 +44,24 @@ public class RestExceptionHandler {
         @ExceptionHandler(MethodArgumentNotValidException.class)
         public ResponseEntity<ApiErrorDTO> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex,
                         HttpServletRequest request) {
-                List<String> errors = ex.getBindingResult().getFieldErrors().stream()
+                List<String> fieldErrors = ex.getBindingResult().getFieldErrors().stream()
                                 .map(fieldError -> fieldError.getField() + ": " + fieldError.getDefaultMessage())
                                 .collect(Collectors.toList());
+
+                List<String> globalErrors = ex.getBindingResult().getGlobalErrors().stream()
+                                .map(globalError -> globalError.getObjectName() + ": "
+                                                + globalError.getDefaultMessage())
+                                .collect(Collectors.toList());
+
+                List<String> allErrors = new ArrayList<>(globalErrors);
+                allErrors.addAll(fieldErrors);
 
                 ApiErrorDTO error = ApiErrorDTO.builder()
                                 .timestamp(LocalDateTime.now())
                                 .status(HttpStatus.BAD_REQUEST.value())
                                 .error("Validation Error")
                                 .message("Um ou mais campos estão inválidos.")
-                                .validationErrors(errors)
+                                .validationErrors(allErrors)
                                 .build();
                 return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
         }
