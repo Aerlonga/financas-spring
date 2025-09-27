@@ -35,10 +35,6 @@ public class UsuarioService {
         if (usuarioRepository.existsByEmail(usuario.getEmail())) {
             throw new BusinessException("O e-mail informado já está em uso.");
         }
-        // Para a criação de um novo usuário, ele mesmo é o criador e o atualizador
-        // inicial.
-        // O AuditorAware não funciona aqui pois o endpoint é público e não há usuário
-        // logado.
         usuario.setCriadoPor(usuario.getEmail());
         usuario.setAtualizadoPor(usuario.getEmail());
 
@@ -53,11 +49,8 @@ public class UsuarioService {
     }
 
     public Usuario atualizar(Long id, UsuarioUpdateDTO dto) {
-        // findById já lança ResourceNotFoundException se o usuário não existir
         Usuario usuario = this.findById(id);
 
-        // A validação de e-mail único na atualização é tratada pela anotação
-        // @EmailUnicoUpdate
         usuarioMapper.updateEntity(usuario, dto);
         return usuarioRepository.save(usuario);
     }
