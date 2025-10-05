@@ -35,6 +35,9 @@ public class UsuarioService {
         if (usuarioRepository.existsByEmail(usuario.getEmail())) {
             throw new BusinessException("O e-mail informado já está em uso.");
         }
+        usuario.setCriadoPor(usuario.getEmail());
+        usuario.setAtualizadoPor(usuario.getEmail());
+
         return usuarioRepository.save(usuario);
     }
 
@@ -46,11 +49,8 @@ public class UsuarioService {
     }
 
     public Usuario atualizar(Long id, UsuarioUpdateDTO dto) {
-        // findById já lança ResourceNotFoundException se o usuário não existir
         Usuario usuario = this.findById(id);
 
-        // A validação de e-mail único na atualização é tratada pela anotação
-        // @EmailUnicoUpdate
         usuarioMapper.updateEntity(usuario, dto);
         return usuarioRepository.save(usuario);
     }
