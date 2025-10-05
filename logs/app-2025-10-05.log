@@ -1,0 +1,858 @@
+2025-10-05 16:04:06,888 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-10-05 16:04:06,923 INFO o.s.b.StartupInfoLogger [restartedMain] Starting FinancasSpringApplication using Java 17.0.15 with PID 107841 (/home/aerlon/financas-spring/target/classes started by aerlon in /home/aerlon/financas-spring)
+2025-10-05 16:04:06,924 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v3.2.7, Spring v6.1.10
+2025-10-05 16:04:06,925 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "local"
+2025-10-05 16:04:06,979 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-05 16:04:06,980 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-05 16:04:07,772 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-05 16:04:07,827 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 46 ms. Found 1 JPA repository interface.
+2025-10-05 16:04:08,537 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2025-10-05 16:04:08,556 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-05 16:04:08,562 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-10-05 16:04:08,563 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-10-05 16:04:08,612 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-10-05 16:04:08,613 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1604 ms
+2025-10-05 16:04:08,686 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'jwtRequestFilter' configured for use
+2025-10-05 16:04:08,747 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-10-05 16:04:08,939 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@69bc185d
+2025-10-05 16:04:08,941 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2025-10-05 16:04:09,019 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway Community Edition 9.22.3 by Redgate
+2025-10-05 16:04:09,019 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] See release notes here: https://rd.gt/416ObMi
+2025-10-05 16:04:09,019 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] 
+2025-10-05 16:04:09,032 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:postgresql://localhost:5432/financas (PostgreSQL 16.9)
+2025-10-05 16:04:09,043 WARN o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway upgrade recommended: PostgreSQL 16.9 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-10-05 16:04:09,090 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.026s)
+2025-10-05 16:04:09,105 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema "public": 1
+2025-10-05 16:04:09,110 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema "public" is up to date. No migration necessary.
+2025-10-05 16:04:09,197 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-05 16:04:09,268 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.4.9.Final
+2025-10-05 16:04:09,307 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2025-10-05 16:04:09,513 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-05 16:04:10,221 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-05 16:04:10,260 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 16:04:10,647 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-05 16:04:10,877 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7240b5a0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@708e5594, org.springframework.security.web.context.SecurityContextHolderFilter@12cdb0d5, org.springframework.security.web.header.HeaderWriterFilter@45546b2c, org.springframework.web.filter.CorsFilter@4760c9e9, org.springframework.security.web.authentication.logout.LogoutFilter@3b4a5882, dev.financas.FinancasSpring.security.JwtRequestFilter@7dbd9987, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2edc2d0f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6756c372, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f66adbe, org.springframework.security.web.session.SessionManagementFilter@5b3aa099, org.springframework.security.web.access.ExceptionTranslationFilter@46b1c1f, org.springframework.security.web.access.intercept.AuthorizationFilter@745ed25e]
+2025-10-05 16:04:11,157 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2025-10-05 16:04:11,173 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-10-05 16:04:11,192 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path ''
+2025-10-05 16:04:11,204 INFO o.s.b.StartupInfoLogger [restartedMain] Started FinancasSpringApplication in 4.656 seconds (process running for 4.963)
+
+
+2025-10-05 16:04:38,760 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-05 16:04:38,761 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-10-05 16:04:38,763 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 2 ms
+2025-10-05 16:06:50,719 INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener [File Watcher] Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-10-05 16:06:50,722 INFO o.a.j.l.DirectJDKLog [Thread-5] Stopping ProtocolHandler ["http-nio-8080"]
+2025-10-05 16:06:50,727 INFO o.s.o.j.AbstractEntityManagerFactoryBean [Thread-5] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 16:06:50,731 INFO c.z.h.HikariDataSource [Thread-5] HikariPool-1 - Shutdown initiated...
+2025-10-05 16:06:50,736 INFO c.z.h.HikariDataSource [Thread-5] HikariPool-1 - Shutdown completed.
+2025-10-05 16:06:50,838 INFO o.s.b.StartupInfoLogger [restartedMain] Starting FinancasSpringApplication using Java 17.0.15 with PID 107841 (/home/aerlon/financas-spring/target/classes started by aerlon in /home/aerlon/financas-spring)
+2025-10-05 16:06:50,838 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v3.2.7, Spring v6.1.10
+2025-10-05 16:06:50,839 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "local"
+2025-10-05 16:06:51,063 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-05 16:06:51,074 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 10 ms. Found 1 JPA repository interface.
+2025-10-05 16:06:51,203 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2025-10-05 16:06:51,205 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-05 16:06:51,205 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-10-05 16:06:51,206 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-10-05 16:06:51,226 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-10-05 16:06:51,226 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 385 ms
+2025-10-05 16:06:51,243 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'jwtRequestFilter' configured for use
+2025-10-05 16:06:51,269 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2025-10-05 16:06:51,284 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@37b039d6
+2025-10-05 16:06:51,284 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2025-10-05 16:06:51,295 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:postgresql://localhost:5432/financas (PostgreSQL 16.9)
+2025-10-05 16:06:51,301 WARN o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway upgrade recommended: PostgreSQL 16.9 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-10-05 16:06:51,309 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.005s)
+2025-10-05 16:06:51,330 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema "public": 1
+2025-10-05 16:06:51,331 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema "public" is up to date. No migration necessary.
+2025-10-05 16:06:51,350 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-05 16:06:51,353 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2025-10-05 16:06:51,356 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-05 16:06:51,413 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-05 16:06:51,426 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 16:06:51,529 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-05 16:06:51,602 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a859134, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ba9e0bd, org.springframework.security.web.context.SecurityContextHolderFilter@30157eef, org.springframework.security.web.header.HeaderWriterFilter@1b4a95ab, org.springframework.web.filter.CorsFilter@30ba25e9, org.springframework.security.web.authentication.logout.LogoutFilter@312007ae, dev.financas.FinancasSpring.security.JwtRequestFilter@779be7d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c5bde8d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1373ef60, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40897130, org.springframework.security.web.session.SessionManagementFilter@757d88a, org.springframework.security.web.access.ExceptionTranslationFilter@65812464, org.springframework.security.web.access.intercept.AuthorizationFilter@3f09f94f]
+2025-10-05 16:06:51,679 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2025-10-05 16:06:51,686 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-10-05 16:06:51,690 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path ''
+2025-10-05 16:06:51,694 INFO o.s.b.StartupInfoLogger [restartedMain] Started FinancasSpringApplication in 0.89 seconds (process running for 165.452)
+2025-10-05 16:06:51,696 INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2025-10-05 16:07:13,234 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 16:07:13,235 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown initiated...
+2025-10-05 16:07:13,239 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown completed.
+2025-10-05 16:07:19,882 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-10-05 16:07:19,909 INFO o.s.b.StartupInfoLogger [restartedMain] Starting FinancasSpringApplication using Java 17.0.15 with PID 110113 (/home/aerlon/financas-spring/target/classes started by aerlon in /home/aerlon/financas-spring)
+2025-10-05 16:07:19,909 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v3.2.7, Spring v6.1.10
+2025-10-05 16:07:19,910 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "local"
+2025-10-05 16:07:19,950 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-05 16:07:19,951 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-05 16:07:20,667 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-05 16:07:20,714 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 42 ms. Found 1 JPA repository interface.
+2025-10-05 16:07:21,318 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2025-10-05 16:07:21,331 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-05 16:07:21,336 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-10-05 16:07:21,337 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-10-05 16:07:21,380 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-10-05 16:07:21,382 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1409 ms
+2025-10-05 16:07:21,437 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'jwtRequestFilter' configured for use
+2025-10-05 16:07:21,496 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-10-05 16:07:21,649 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6d9a1750
+2025-10-05 16:07:21,651 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2025-10-05 16:07:21,718 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway Community Edition 9.22.3 by Redgate
+2025-10-05 16:07:21,718 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] See release notes here: https://rd.gt/416ObMi
+2025-10-05 16:07:21,718 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] 
+2025-10-05 16:07:21,729 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:postgresql://localhost:5432/financas (PostgreSQL 16.9)
+2025-10-05 16:07:21,737 WARN o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway upgrade recommended: PostgreSQL 16.9 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-10-05 16:07:21,759 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.014s)
+2025-10-05 16:07:21,796 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema "public": 1
+2025-10-05 16:07:21,799 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema "public" is up to date. No migration necessary.
+2025-10-05 16:07:21,870 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-05 16:07:21,907 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.4.9.Final
+2025-10-05 16:07:21,934 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2025-10-05 16:07:22,097 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-05 16:07:22,862 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-05 16:07:22,894 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 16:07:23,303 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-05 16:07:23,531 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@56c114aa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40c0348a, org.springframework.security.web.context.SecurityContextHolderFilter@1d6baa10, org.springframework.security.web.header.HeaderWriterFilter@1652f41c, org.springframework.web.filter.CorsFilter@3b4a5882, org.springframework.security.web.authentication.logout.LogoutFilter@77ed2ea3, dev.financas.FinancasSpring.security.JwtRequestFilter@2aa35b51, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@46b1c1f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@135a6bf3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ae2813b, org.springframework.security.web.session.SessionManagementFilter@706e0911, org.springframework.security.web.access.ExceptionTranslationFilter@7a576cd, org.springframework.security.web.access.intercept.AuthorizationFilter@5eb915c5]
+2025-10-05 16:07:23,806 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2025-10-05 16:07:23,820 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-10-05 16:07:23,833 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path ''
+2025-10-05 16:07:23,844 INFO o.s.b.StartupInfoLogger [restartedMain] Started FinancasSpringApplication in 4.3 seconds (process running for 4.615)
+
+
+2025-10-05 16:07:29,127 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-05 16:07:29,127 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2025-10-05 16:07:29,129 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2025-10-05 16:07:29,271 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-1] Requisição recebida em /api/auth/login
+2025-10-05 16:07:29,272 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-1] Email recebido: aerlon.aga@gmail.com
+2025-10-05 16:07:29,540 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-1] Autenticação realizada: true
+2025-10-05 16:07:29,541 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-1] Usuário autenticado: aerlon.aga@gmail.com
+2025-10-05 16:07:29,573 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-1] Token gerado: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZXJsb24uYWdhQGdtYWlsLmNvbSIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTk2OTEyNDksImV4cCI6MTc1OTY5NDg0OX0.gL6s_g8L0oA3uQtX83UnTXlDMaAG9w3zjH5UGnrLZak
+
+
+2025-10-05 16:25:24,992 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<dev.financas.FinancasSpring.rest.dto.AuthResponse> dev.financas.FinancasSpring.rest.controllers.AuthController.login(dev.financas.FinancasSpring.rest.dto.AuthRequest) with 2 errors: [Field error in object 'authRequest' on field 'email': rejected value [null]; codes [NotBlank.authRequest.email,NotBlank.email,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [authRequest.email,email]; arguments []; default message [email]]; default message [E-mail é obrigatório]] [Field error in object 'authRequest' on field 'senha': rejected value [null]; codes [NotBlank.authRequest.senha,NotBlank.senha,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [authRequest.senha,senha]; arguments []; default message [senha]]; default message [Senha é obrigatória]] ]
+2025-10-05 16:25:43,072 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-7] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<dev.financas.FinancasSpring.rest.dto.AuthResponse> dev.financas.FinancasSpring.rest.controllers.AuthController.login(dev.financas.FinancasSpring.rest.dto.AuthRequest): [Field error in object 'authRequest' on field 'senha': rejected value []; codes [NotBlank.authRequest.senha,NotBlank.senha,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [authRequest.senha,senha]; arguments []; default message [senha]]; default message [Senha é obrigatória]] ]
+2025-10-05 16:25:48,888 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-8] Requisição recebida em /api/auth/login
+2025-10-05 16:25:48,888 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-8] Email recebido: aerlon.aga@gmail.com
+2025-10-05 16:25:48,964 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-8] Autenticação realizada: true
+2025-10-05 16:25:48,965 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-8] Usuário autenticado: aerlon.aga@gmail.com
+2025-10-05 16:25:48,968 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-8] Token gerado: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZXJsb24uYWdhQGdtYWlsLmNvbSIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTk2OTIzNDgsImV4cCI6MTc1OTY5NTk0OH0.X6S6W0jZwZcnQ794nuPKrNF53x27r4e52JONGo-PFsw
+2025-10-05 19:31:32,906 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-10-05 19:31:32,930 INFO o.s.b.StartupInfoLogger [restartedMain] Starting FinancasSpringApplication using Java 17.0.11 with PID 59 (/app/target/classes started by root in /app)
+2025-10-05 19:31:32,930 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v3.2.7, Spring v6.1.10
+2025-10-05 19:31:32,931 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "local"
+2025-10-05 19:31:32,968 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-05 19:31:32,968 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-05 19:31:33,557 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-05 19:31:33,596 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interface.
+2025-10-05 19:31:34,061 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2025-10-05 19:31:34,069 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-05 19:31:34,071 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-10-05 19:31:34,072 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-10-05 19:31:34,101 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-10-05 19:31:34,102 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1117 ms
+2025-10-05 19:31:34,139 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'jwtRequestFilter' configured for use
+2025-10-05 19:31:34,180 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-10-05 19:31:35,223 ERROR c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.flywaydb.core.api.configuration.ClassicConfiguration.setDataSource(ClassicConfiguration.java:1094)
+	at org.flywaydb.core.api.configuration.FluentConfiguration.dataSource(FluentConfiguration.java:624)
+	at org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration$FlywayConfiguration.configureDataSource(FlywayAutoConfiguration.java:188)
+	at org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration$FlywayConfiguration.flyway(FlywayAutoConfiguration.java:175)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1167)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at dev.financas.FinancasSpring.FinancasSpringApplication.main(FinancasSpringApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 46 common frames omitted
+2025-10-05 19:31:35,269 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway Community Edition 9.22.3 by Redgate
+2025-10-05 19:31:35,270 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] See release notes here: https://rd.gt/416ObMi
+2025-10-05 19:31:35,270 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] 
+2025-10-05 19:31:35,276 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-10-05 19:31:36,277 ERROR c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:74)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at dev.financas.FinancasSpring.FinancasSpringApplication.main(FinancasSpringApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 40 common frames omitted
+2025-10-05 19:31:36,279 WARN o.s.c.s.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+2025-10-05 19:31:36,282 INFO o.a.j.l.DirectJDKLog [restartedMain] Stopping service [Tomcat]
+2025-10-05 19:31:36,293 INFO o.s.b.a.l.ConditionEvaluationReportLogger [restartedMain] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-05 19:31:36,306 ERROR o.s.b.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at dev.financas.FinancasSpring.FinancasSpringApplication.main(FinancasSpringApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	... 15 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:74)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	... 22 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	... 28 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 40 common frames omitted
+
+2025-10-05 16:32:58,428 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-10-05 16:32:58,470 INFO o.s.b.StartupInfoLogger [restartedMain] Starting FinancasSpringApplication using Java 17.0.15 with PID 127589 (/home/aerlon/financas-spring/target/classes started by aerlon in /home/aerlon/financas-spring)
+2025-10-05 16:32:58,471 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v3.2.7, Spring v6.1.10
+2025-10-05 16:32:58,472 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "local"
+2025-10-05 16:32:58,530 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-05 16:32:58,531 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-05 16:32:59,409 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-05 16:32:59,457 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2025-10-05 16:33:00,079 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2025-10-05 16:33:00,093 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-05 16:33:00,099 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-10-05 16:33:00,099 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-10-05 16:33:00,141 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-10-05 16:33:00,142 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1554 ms
+2025-10-05 16:33:00,191 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'jwtRequestFilter' configured for use
+2025-10-05 16:33:00,250 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-10-05 16:33:00,411 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@41ee04e4
+2025-10-05 16:33:00,413 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2025-10-05 16:33:00,494 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway Community Edition 9.22.3 by Redgate
+2025-10-05 16:33:00,495 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] See release notes here: https://rd.gt/416ObMi
+2025-10-05 16:33:00,495 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] 
+2025-10-05 16:33:00,509 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:postgresql://localhost:5432/financas (PostgreSQL 16.9)
+2025-10-05 16:33:00,517 WARN o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway upgrade recommended: PostgreSQL 16.9 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-10-05 16:33:00,574 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.032s)
+2025-10-05 16:33:00,596 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema "public": 1
+2025-10-05 16:33:00,598 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema "public" is up to date. No migration necessary.
+2025-10-05 16:33:00,689 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-05 16:33:00,765 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.4.9.Final
+2025-10-05 16:33:00,810 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2025-10-05 16:33:01,017 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-05 16:33:01,861 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-05 16:33:01,915 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 16:33:02,266 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-05 16:33:02,496 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6e40229e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4cc87b1a, org.springframework.security.web.context.SecurityContextHolderFilter@203054ea, org.springframework.security.web.header.HeaderWriterFilter@53d60bc5, org.springframework.web.filter.CorsFilter@2246b513, org.springframework.security.web.authentication.logout.LogoutFilter@69b0641c, dev.financas.FinancasSpring.security.JwtRequestFilter@106bbfcb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4310f315, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6aba2603, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@11432c74, org.springframework.security.web.session.SessionManagementFilter@3c73181b, org.springframework.security.web.access.ExceptionTranslationFilter@3777595c, org.springframework.security.web.access.intercept.AuthorizationFilter@59df6eb2]
+2025-10-05 16:33:02,770 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2025-10-05 16:33:02,786 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-10-05 16:33:02,808 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path ''
+2025-10-05 16:33:02,818 INFO o.s.b.StartupInfoLogger [restartedMain] Started FinancasSpringApplication in 4.789 seconds (process running for 5.241)
+2025-10-05 17:07:12,683 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 17:07:12,699 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-10-05 17:07:12,702 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-10-05 20:08:03,326 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-10-05 20:08:03,357 INFO o.s.b.StartupInfoLogger [restartedMain] Starting FinancasSpringApplication using Java 17.0.11 with PID 57 (/app/target/classes started by root in /app)
+2025-10-05 20:08:03,358 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v3.2.7, Spring v6.1.10
+2025-10-05 20:08:03,358 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "local"
+2025-10-05 20:08:03,392 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-05 20:08:03,392 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-05 20:08:04,003 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-05 20:08:04,043 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 32 ms. Found 1 JPA repository interface.
+2025-10-05 20:08:04,522 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2025-10-05 20:08:04,529 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-05 20:08:04,531 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-10-05 20:08:04,532 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-10-05 20:08:04,564 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-10-05 20:08:04,565 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1154 ms
+2025-10-05 20:08:04,605 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'jwtRequestFilter' configured for use
+2025-10-05 20:08:04,646 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-10-05 20:08:05,690 ERROR c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.flywaydb.core.api.configuration.ClassicConfiguration.setDataSource(ClassicConfiguration.java:1094)
+	at org.flywaydb.core.api.configuration.FluentConfiguration.dataSource(FluentConfiguration.java:624)
+	at org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration$FlywayConfiguration.configureDataSource(FlywayAutoConfiguration.java:188)
+	at org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration$FlywayConfiguration.flyway(FlywayAutoConfiguration.java:175)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1167)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at dev.financas.FinancasSpring.FinancasSpringApplication.main(FinancasSpringApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 46 common frames omitted
+2025-10-05 20:08:05,739 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway Community Edition 9.22.3 by Redgate
+2025-10-05 20:08:05,739 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] See release notes here: https://rd.gt/416ObMi
+2025-10-05 20:08:05,739 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] 
+2025-10-05 20:08:05,744 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-10-05 20:08:06,745 ERROR c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:74)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at dev.financas.FinancasSpring.FinancasSpringApplication.main(FinancasSpringApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 40 common frames omitted
+2025-10-05 20:08:06,747 WARN o.s.c.s.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+2025-10-05 20:08:06,749 INFO o.a.j.l.DirectJDKLog [restartedMain] Stopping service [Tomcat]
+2025-10-05 20:08:06,762 INFO o.s.b.a.l.ConditionEvaluationReportLogger [restartedMain] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-05 20:08:06,773 ERROR o.s.b.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at dev.financas.FinancasSpring.FinancasSpringApplication.main(FinancasSpringApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	... 15 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:74)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	... 22 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	... 28 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 40 common frames omitted
+2025-10-05 17:08:11,320 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-10-05 17:08:11,350 INFO o.s.b.StartupInfoLogger [restartedMain] Starting FinancasSpringApplication using Java 17.0.15 with PID 153689 (/home/aerlon/financas-spring/target/classes started by aerlon in /home/aerlon/financas-spring)
+2025-10-05 17:08:11,351 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v3.2.7, Spring v6.1.10
+2025-10-05 17:08:11,351 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "local"
+2025-10-05 17:08:11,392 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-05 17:08:11,393 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-05 17:08:12,051 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-05 17:08:12,108 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interface.
+2025-10-05 17:08:12,749 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2025-10-05 17:08:12,771 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-05 17:08:12,775 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-10-05 17:08:12,776 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-10-05 17:08:12,819 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-10-05 17:08:12,820 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1403 ms
+2025-10-05 17:08:12,878 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'jwtRequestFilter' configured for use
+2025-10-05 17:08:12,948 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-10-05 17:08:13,133 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@54e79e94
+2025-10-05 17:08:13,135 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2025-10-05 17:08:13,206 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway Community Edition 9.22.3 by Redgate
+2025-10-05 17:08:13,206 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] See release notes here: https://rd.gt/416ObMi
+2025-10-05 17:08:13,207 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] 
+2025-10-05 17:08:13,219 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:postgresql://localhost:5432/financas (PostgreSQL 16.9)
+2025-10-05 17:08:13,227 WARN o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway upgrade recommended: PostgreSQL 16.9 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-10-05 17:08:13,271 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.022s)
+2025-10-05 17:08:13,287 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema "public": 1
+2025-10-05 17:08:13,292 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema "public" is up to date. No migration necessary.
+2025-10-05 17:08:13,380 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-05 17:08:13,444 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.4.9.Final
+2025-10-05 17:08:13,478 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2025-10-05 17:08:13,713 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-05 17:08:14,452 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-05 17:08:14,498 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 17:08:14,848 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-05 17:08:15,069 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7a587de4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e6a0fe0, org.springframework.security.web.context.SecurityContextHolderFilter@718a50cd, org.springframework.security.web.header.HeaderWriterFilter@7c7aeaef, org.springframework.web.filter.CorsFilter@3bcb2e49, org.springframework.security.web.authentication.logout.LogoutFilter@22789108, dev.financas.FinancasSpring.security.JwtRequestFilter@192f7e3f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@397a30b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f983224, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c584c15, org.springframework.security.web.session.SessionManagementFilter@9e24dc8, org.springframework.security.web.access.ExceptionTranslationFilter@4c766c0e, org.springframework.security.web.access.intercept.AuthorizationFilter@63fefb14]
+2025-10-05 17:08:15,339 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2025-10-05 17:08:15,350 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-10-05 17:08:15,369 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path ''
+2025-10-05 17:08:15,377 INFO o.s.b.StartupInfoLogger [restartedMain] Started FinancasSpringApplication in 4.471 seconds (process running for 4.86)
+2025-10-05 17:08:19,736 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-05 17:08:19,736 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-10-05 17:08:19,737 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2025-10-05 17:08:19,849 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Requisição recebida em /api/auth/login
+2025-10-05 17:08:19,850 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:08:20,079 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Autenticação realizada: true
+2025-10-05 17:08:20,080 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Usuário autenticado: aerlon.aga@gmail.com
+2025-10-05 17:08:20,104 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Token gerado: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZXJsb24uYWdhQGdtYWlsLmNvbSIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTk2OTQ5MDAsImV4cCI6MTc1OTY5ODUwMH0.6IGsMnvbNNm9IxWBSXnko3tvs1G1tgdne1-w6qweW3o
+
+
+
+2025-10-05 17:08:51,433 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Requisição recebida em /api/auth/login
+2025-10-05 17:08:51,433 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:08:51,495 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Autenticação realizada: true
+2025-10-05 17:08:51,495 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Usuário autenticado: aerlon.aga@gmail.com
+2025-10-05 17:08:51,496 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Token gerado: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZXJsb24uYWdhQGdtYWlsLmNvbSIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTk2OTQ5MzEsImV4cCI6MTc1OTY5ODUzMX0.mVrRkvLn0rUhr86QP_8gyapnNNGEFVCi8E2rPGOuFTI
+2025-10-05 17:09:25,110 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-5] Requisição recebida em /api/auth/login
+2025-10-05 17:09:25,110 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-5] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:09:25,169 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-5] Autenticação realizada: true
+2025-10-05 17:09:25,170 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-5] Usuário autenticado: aerlon.aga@gmail.com
+2025-10-05 17:09:25,172 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-5] Token gerado: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZXJsb24uYWdhQGdtYWlsLmNvbSIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTk2OTQ5NjUsImV4cCI6MTc1OTY5ODU2NX0.e_r2LYCsVx4aXt52o31NFBzLj_I1Uff3oNH9rhdAcg0
+2025-10-05 17:12:34,258 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-6] Requisição recebida em /api/auth/login
+2025-10-05 17:12:34,259 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-6] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:12:34,321 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-6] Autenticação realizada: true
+2025-10-05 17:12:34,321 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-6] Usuário autenticado: aerlon.aga@gmail.com
+2025-10-05 17:12:34,322 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-6] Token gerado: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZXJsb24uYWdhQGdtYWlsLmNvbSIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTk2OTUxNTQsImV4cCI6MTc1OTY5ODc1NH0.xWt8IgyaWWxShuPKCbf7Hv4digN_jDiTy-enEph9gOc
+2025-10-05 17:12:44,078 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-7] Requisição recebida em /api/auth/login
+2025-10-05 17:12:44,079 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-7] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:12:44,149 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-7] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:14:06,008 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-8] Requisição recebida em /api/auth/login
+2025-10-05 17:14:06,009 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-8] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:14:06,070 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-8] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:15:08,456 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-9] Requisição recebida em /api/auth/login
+2025-10-05 17:15:08,457 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-9] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:15:08,517 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-9] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:17:18,810 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-10] Requisição recebida em /api/auth/login
+2025-10-05 17:17:18,811 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-10] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:17:18,870 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:18:12,123 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-1] Requisição recebida em /api/auth/login
+2025-10-05 17:18:12,124 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-1] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:18:12,182 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:18:17,014 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Requisição recebida em /api/auth/login
+2025-10-05 17:18:17,014 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:18:17,071 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:18:31,338 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Requisição recebida em /api/auth/login
+2025-10-05 17:18:31,338 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:18:31,397 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:18:39,002 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-4] Requisição recebida em /api/auth/login
+2025-10-05 17:18:39,002 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-4] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:18:39,061 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:18:42,553 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-5] Requisição recebida em /api/auth/login
+2025-10-05 17:18:42,553 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-5] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:18:42,611 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:18:48,105 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-6] Requisição recebida em /api/auth/login
+2025-10-05 17:18:48,105 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-6] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:18:48,165 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-6] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:18:50,837 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-7] Requisição recebida em /api/auth/login
+2025-10-05 17:18:50,837 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-7] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:18:50,896 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-7] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:18:56,036 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-8] Requisição recebida em /api/auth/login
+2025-10-05 17:18:56,036 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-8] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:18:56,102 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-8] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:19:22,167 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-9] Requisição recebida em /api/auth/login
+2025-10-05 17:19:22,168 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-9] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:19:22,224 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-9] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:21:27,135 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-10] Requisição recebida em /api/auth/login
+2025-10-05 17:21:27,137 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-10] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:21:27,197 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:25:55,298 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-1] Requisição recebida em /api/auth/login
+2025-10-05 17:25:55,300 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-1] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:25:55,376 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:27:55,590 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Requisição recebida em /api/auth/login
+2025-10-05 17:27:55,591 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:27:55,657 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:31:01,738 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Requisição recebida em /api/auth/login
+2025-10-05 17:31:01,739 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:31:01,801 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:32:32,203 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-4] Requisição recebida em /api/auth/login
+2025-10-05 17:32:32,203 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-4] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:32:32,264 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:33:21,885 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-5] Requisição recebida em /api/auth/login
+2025-10-05 17:33:21,886 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-5] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:33:21,948 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:34:02,553 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-6] Requisição recebida em /api/auth/login
+2025-10-05 17:34:02,554 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-6] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:34:02,615 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-6] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:34:40,794 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-7] Requisição recebida em /api/auth/login
+2025-10-05 17:34:40,795 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-7] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:34:40,856 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-7] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:34:41,445 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-8] Requisição recebida em /api/auth/login
+2025-10-05 17:34:41,445 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-8] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:34:41,502 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-8] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:40:26,800 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-9] Requisição recebida em /api/auth/login
+2025-10-05 17:40:26,801 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-9] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:40:26,872 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-9] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:42:12,588 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-10] Requisição recebida em /api/auth/login
+2025-10-05 17:42:12,589 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-10] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:42:12,669 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:42:15,292 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-1] Requisição recebida em /api/auth/login
+2025-10-05 17:42:15,293 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-1] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:42:15,351 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.security.authentication.BadCredentialsException: Usuário inexistente ou senha inválida]
+2025-10-05 17:42:50,588 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Requisição recebida em /api/auth/login
+2025-10-05 17:42:50,589 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Email recebido: aerlon.aga@gmail.com
+2025-10-05 17:42:50,644 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Autenticação realizada: true
+2025-10-05 17:42:50,645 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Usuário autenticado: aerlon.aga@gmail.com
+2025-10-05 17:42:50,646 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-2] Token gerado: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZXJsb24uYWdhQGdtYWlsLmNvbSIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTk2OTY5NzAsImV4cCI6MTc1OTcwMDU3MH0.aez8DxIFaYV2cuFZTiVs-1fsGjC5b1LKk_6YpbkXyk8
+2025-10-05 18:26:04,470 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Requisição recebida em /api/auth/login
+2025-10-05 18:26:04,485 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Email recebido: aerlon.aga@gmail.com
+2025-10-05 18:26:04,657 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Autenticação realizada: true
+2025-10-05 18:26:04,658 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Usuário autenticado: aerlon.aga@gmail.com
+2025-10-05 18:26:04,662 DEBUG d.f.F.r.c.AuthController [http-nio-8080-exec-3] Token gerado: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZXJsb24uYWdhQGdtYWlsLmNvbSIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTk2OTk1NjQsImV4cCI6MTc1OTcwMzE2NH0.x8gurL6DyuenUaUEUaE3Qc6ZUkqI6xvOtPhgf2Yf_gk
+2025-10-05 18:55:48,904 INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener [File Watcher] Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-10-05 18:55:49,414 INFO o.a.j.l.DirectJDKLog [Thread-5] Stopping ProtocolHandler ["http-nio-8080"]
+2025-10-05 18:55:49,590 INFO o.s.o.j.AbstractEntityManagerFactoryBean [Thread-5] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 18:55:49,773 INFO c.z.h.HikariDataSource [Thread-5] HikariPool-1 - Shutdown initiated...
+2025-10-05 18:55:49,810 INFO c.z.h.HikariDataSource [Thread-5] HikariPool-1 - Shutdown completed.
+2025-10-05 18:55:51,395 INFO o.s.b.StartupInfoLogger [restartedMain] Starting FinancasSpringApplication using Java 17.0.15 with PID 153689 (/home/aerlon/financas-spring/target/classes started by aerlon in /home/aerlon/financas-spring)
+2025-10-05 18:55:51,396 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v3.2.7, Spring v6.1.10
+2025-10-05 18:55:51,396 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "local"
+2025-10-05 18:55:52,378 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-05 18:55:52,390 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
+2025-10-05 18:55:53,016 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2025-10-05 18:55:53,018 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-05 18:55:53,019 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-10-05 18:55:53,019 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-10-05 18:55:53,047 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-10-05 18:55:53,047 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1637 ms
+2025-10-05 18:55:53,067 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'jwtRequestFilter' configured for use
+2025-10-05 18:55:53,089 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2025-10-05 18:55:53,117 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@202be7c7
+2025-10-05 18:55:53,117 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2025-10-05 18:55:53,137 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:postgresql://localhost:5432/financas (PostgreSQL 16.9)
+2025-10-05 18:55:53,143 WARN o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway upgrade recommended: PostgreSQL 16.9 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-10-05 18:55:53,190 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.030s)
+2025-10-05 18:55:53,228 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema "public": 1
+2025-10-05 18:55:53,231 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema "public" is up to date. No migration necessary.
+2025-10-05 18:55:53,257 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-05 18:55:53,262 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2025-10-05 18:55:53,271 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-05 18:55:53,381 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-05 18:55:53,443 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 18:55:53,560 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-05 18:55:53,636 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7b7e9a62, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@84ba7bb, org.springframework.security.web.context.SecurityContextHolderFilter@783286bc, org.springframework.security.web.header.HeaderWriterFilter@2dc88aa, org.springframework.web.filter.CorsFilter@2e53f635, org.springframework.security.web.authentication.logout.LogoutFilter@7b18ed0d, dev.financas.FinancasSpring.security.JwtRequestFilter@1fb25df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24e678b7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42993d59, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a0d7e74, org.springframework.security.web.session.SessionManagementFilter@7f47ab7c, org.springframework.security.web.access.ExceptionTranslationFilter@4243d974, org.springframework.security.web.access.intercept.AuthorizationFilter@47b2771c]
+2025-10-05 18:55:53,742 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2025-10-05 18:55:53,750 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-10-05 18:55:53,755 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path ''
+2025-10-05 18:55:53,761 INFO o.s.b.StartupInfoLogger [restartedMain] Started FinancasSpringApplication in 2.572 seconds (process running for 6463.243)
+2025-10-05 18:55:53,766 INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2025-10-05 18:55:55,144 INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener [File Watcher] Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-10-05 18:55:55,145 INFO o.a.j.l.DirectJDKLog [Thread-7] Stopping ProtocolHandler ["http-nio-8080"]
+2025-10-05 18:55:55,148 INFO o.s.o.j.AbstractEntityManagerFactoryBean [Thread-7] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 18:55:55,149 INFO c.z.h.HikariDataSource [Thread-7] HikariPool-2 - Shutdown initiated...
+2025-10-05 18:55:55,151 INFO c.z.h.HikariDataSource [Thread-7] HikariPool-2 - Shutdown completed.
+2025-10-05 18:55:55,213 INFO o.s.b.StartupInfoLogger [restartedMain] Starting FinancasSpringApplication using Java 17.0.15 with PID 153689 (/home/aerlon/financas-spring/target/classes started by aerlon in /home/aerlon/financas-spring)
+2025-10-05 18:55:55,214 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v3.2.7, Spring v6.1.10
+2025-10-05 18:55:55,214 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "local"
+2025-10-05 18:55:55,339 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-05 18:55:55,346 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 6 ms. Found 1 JPA repository interface.
+2025-10-05 18:55:55,416 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2025-10-05 18:55:55,416 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-05 18:55:55,417 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-10-05 18:55:55,417 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-10-05 18:55:55,425 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-10-05 18:55:55,426 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 210 ms
+2025-10-05 18:55:55,433 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'jwtRequestFilter' configured for use
+2025-10-05 18:55:55,446 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2025-10-05 18:55:55,467 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@77ef44c2
+2025-10-05 18:55:55,467 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2025-10-05 18:55:55,472 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:postgresql://localhost:5432/financas (PostgreSQL 16.9)
+2025-10-05 18:55:55,476 WARN o.f.c.i.l.s.Slf4jLog [restartedMain] Flyway upgrade recommended: PostgreSQL 16.9 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-10-05 18:55:55,493 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.009s)
+2025-10-05 18:55:55,512 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema "public": 1
+2025-10-05 18:55:55,512 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema "public" is up to date. No migration necessary.
+2025-10-05 18:55:55,523 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-05 18:55:55,524 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2025-10-05 18:55:55,526 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-05 18:55:55,571 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-05 18:55:55,598 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 18:55:55,669 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-05 18:55:55,707 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@34b6c133, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50280b28, org.springframework.security.web.context.SecurityContextHolderFilter@5d4bcc30, org.springframework.security.web.header.HeaderWriterFilter@51040bf2, org.springframework.web.filter.CorsFilter@31c09edb, org.springframework.security.web.authentication.logout.LogoutFilter@3f0b6e3b, dev.financas.FinancasSpring.security.JwtRequestFilter@33b9f545, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@431d304a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3237e840, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19e1707d, org.springframework.security.web.session.SessionManagementFilter@5e0a023f, org.springframework.security.web.access.ExceptionTranslationFilter@24375fec, org.springframework.security.web.access.intercept.AuthorizationFilter@18c609ef]
+2025-10-05 18:55:55,755 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2025-10-05 18:55:55,760 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-10-05 18:55:55,764 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path ''
+2025-10-05 18:55:55,767 INFO o.s.b.StartupInfoLogger [restartedMain] Started FinancasSpringApplication in 0.573 seconds (process running for 6465.25)
+2025-10-05 18:55:55,769 INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2025-10-05 18:55:59,912 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05 18:55:59,913 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-3 - Shutdown initiated...
+2025-10-05 18:55:59,914 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-3 - Shutdown completed.
