@@ -13,20 +13,28 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   app:
-    image: maven:3.9.6-eclipse-temurin-17
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
     container_name: financas_app
-    working_dir: /app
-    volumes: 
-      - .:/app
-      - ~/.m2:/root/.m2
-    command: mvn spring-boot:run
     ports:
       - "8080:8080"
     depends_on:
       - postgres
+    volumes:
+      - ./logs:/app/logs
     environment:
       - JWT_SECRET=${JWT_SECRET}
       - JWT_EXPIRATION=${JWT_EXPIRATION}
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/financas
+      - SPRING_DATASOURCE_USERNAME=financas_user
+      - SPRING_DATASOURCE_PASSWORD=financas_senha
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_FLYWAY_ENABLED=true
+
 
 volumes:
   pgdata:
