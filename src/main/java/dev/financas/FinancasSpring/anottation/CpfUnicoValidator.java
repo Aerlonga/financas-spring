@@ -17,9 +17,9 @@ public class CpfUnicoValidator implements ConstraintValidator<CpfUnico, String> 
 
     @Override
     public boolean isValid(String cpf, ConstraintValidatorContext context) {
-        if (!StringUtils.hasText(cpf)) {
+        if (!StringUtils.hasText(cpf))
             return true;
-        }
-        return usuarioDetalhesRepository.findByCpf(cpf).isEmpty();
+
+        return !usuarioDetalhesRepository.existsByCpf(cpf);
     }
 }
