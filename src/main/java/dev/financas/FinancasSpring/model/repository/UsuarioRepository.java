@@ -11,7 +11,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     boolean existsByEmail(String email);
 
-    // Busca o usuário já carregando os relacionamentos
     @EntityGraph(attributePaths = { "detalhes", "financeiro", "preferencias" })
     Optional<Usuario> findWithAllRelationsByEmail(String email);
 }

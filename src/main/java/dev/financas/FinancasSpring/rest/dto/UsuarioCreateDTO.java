@@ -36,4 +36,10 @@ public class UsuarioCreateDTO {
 
     @Valid
     private UsuarioDetalhesCreateDTO detalhes;
+
+    @Valid
+    private UsuarioFinanceiroCreateDTO financeiro;
+
+    @Valid
+    private UsuarioPreferenciasCreateDTO preferencias;
 }
