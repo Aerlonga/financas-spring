@@ -15,7 +15,7 @@ RUN set -eux; \
     apt-get update; \
     apt-get install -y --no-install-recommends ca-certificates wget; \
     if ! command -v gpg; then \
-        apt-get install -y --no-install-recommends gnupg dirmngr; \
+    apt-get install -y --no-install-recommends gnupg dirmngr; \
     fi; \
     rm -rf /var/lib/apt/lists/*; \
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; \
@@ -44,9 +44,10 @@ WORKDIR /app
 # Copy the JAR from the builder stage
 COPY --from=builder /app/target/FinancasSpring-*.jar app.jar
 
-# Copy the entrypoint script and make it executable
+# Copy the entrypoint script
 COPY entrypoint.sh .
-RUN chmod +x entrypoint.sh
+# Ensure the entrypoint script has Unix line endings and is executable
+RUN sed -i 's/\r$//g' /app/entrypoint.sh && chmod +x /app/entrypoint.sh
 
 EXPOSE 8080
 
