@@ -9,13 +9,13 @@ RUN mvn package -DskipTests
 # Stage 2: Create the final image
 FROM eclipse-temurin:17-jre-focal
 
-# Instala o gosu para troca de usuário de forma segura
+# Install gosu for secure user switching
 ENV GOSU_VERSION 1.17
 RUN set -eux; \
     apt-get update; \
     apt-get install -y --no-install-recommends ca-certificates wget; \
     if ! command -v gpg; then \
-    apt-get install -y --no-install-recommends gnupg dirmngr; \
+        apt-get install -y --no-install-recommends gnupg dirmngr; \
     fi; \
     rm -rf /var/lib/apt/lists/*; \
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; \
@@ -44,14 +44,13 @@ WORKDIR /app
 # Copy the JAR from the builder stage
 COPY --from=builder /app/target/FinancasSpring-*.jar app.jar
 
-# Copia o script de entrada e o torna executável
+# Copy the entrypoint script and make it executable
 COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 
 EXPOSE 8080
 
-# Define o script como ponto de entrada. Ele será executado como root.
+# Set the entrypoint. It will run as root initially.
 ENTRYPOINT ["/app/entrypoint.sh"]
-# O comando padrão que o entrypoint irá executar como 'appuser'
+# The default command that the entrypoint will execute as 'appuser'
 CMD ["java", "-jar", "app.jar"]
-

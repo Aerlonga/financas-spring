@@ -1,14 +1,13 @@
 #!/bin/sh
-# entrypoint.sh
+set -e
 
-# Garante que o diretório de logs exista.
+# Create logs directory if it doesn't exist
 mkdir -p /app/logs
 
-# Ajusta o dono da pasta de logs para o usuário do app.
-# Isso funciona no volume montado, corrigindo a permissão em tempo de execução.
-chown -R appuser:appgroup /app/logs
+# Change the owner of the /app directory to the appuser
+# This ensures the application has the correct permissions
+chown -R appuser:appgroup /app
 
-# Executa o comando principal (CMD do Dockerfile) usando o usuário 'appuser'.
-# O 'exec' faz com que o processo do Java substitua o shell, e o "$@"
-# passa quaisquer argumentos que o comando possa ter.
-exec gosu appuser "$@"
+# Execute the main command (CMD from Dockerfile) as the 'appuser'
+# 'exec' replaces the shell with the Java process, and '"$@"' passes along any arguments.
+exec gosu appuser:appgroup "$@"
