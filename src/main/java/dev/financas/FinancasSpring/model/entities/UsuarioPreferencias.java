@@ -16,13 +16,16 @@ public class UsuarioPreferencias {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(length = 20, nullable = false)
     private TemaInterface temaInterface = TemaInterface.CLARO;
 
+    @Builder.Default
     @Column(nullable = false)
     private Boolean notificacoesAtivadas = true;
 
+    @Builder.Default
     @Column(length = 10)
     private String moedaPreferida = "BRL";
 

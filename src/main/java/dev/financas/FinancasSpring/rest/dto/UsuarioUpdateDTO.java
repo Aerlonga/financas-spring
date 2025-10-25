@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import jakarta.validation.Valid;
 
 @Data
 @AllArgsConstructor
@@ -30,4 +31,11 @@ public class UsuarioUpdateDTO {
 
     private Usuario.Status status;
     private Usuario.Role role;
+
+    @Valid
+    private UsuarioDetalhesUpdateDTO detalhes;
+    @Valid
+    private UsuarioFinanceiroUpdateDTO financeiro;
+    @Valid
+    private UsuarioPreferenciasUpdateDTO preferencias;
 }
