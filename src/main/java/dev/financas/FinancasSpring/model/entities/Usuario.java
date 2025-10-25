@@ -1,7 +1,10 @@
 package dev.financas.FinancasSpring.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.NaturalId;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -21,7 +24,9 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "usuarios")
+@Table(name = "usuarios", indexes = {
+        @Index(name = "idx_usuario_email", columnList = "email")
+})
 public class Usuario implements UserDetails {
 
     @Id
@@ -63,8 +68,25 @@ public class Usuario implements UserDetails {
     @Column(name = "atualizado_por")
     private String atualizadoPor;
 
-    public enum Status { ATIVO, INATIVO, BLOQUEADO }
-    public enum Role { USER, ADMIN }
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JsonIgnore
+    private UsuarioDetalhes detalhes;
+
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JsonIgnore
+    private UsuarioFinanceiro financeiro;
+
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JsonIgnore
+    private UsuarioPreferencias preferencias;
+
+    public enum Status {
+        ATIVO, INATIVO, BLOQUEADO
+    }
+
+    public enum Role {
+        USER, ADMIN
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -82,14 +104,22 @@ public class Usuario implements UserDetails {
     }
 
     @Override
-    public boolean isAccountNonExpired() { return true; }
+    public boolean isAccountNonExpired() {
+        return true;
+    }
 
     @Override
-    public boolean isAccountNonLocked() { return status != Status.BLOQUEADO; }
+    public boolean isAccountNonLocked() {
+        return status != Status.BLOQUEADO;
+    }
 
     @Override
-    public boolean isCredentialsNonExpired() { return true; }
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
 
     @Override
-    public boolean isEnabled() { return status == Status.ATIVO; }
+    public boolean isEnabled() {
+        return status == Status.ATIVO;
+    }
 }

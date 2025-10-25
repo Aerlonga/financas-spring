@@ -39,6 +39,6 @@ build/
 # Arquivo de variáveis de ambiente
 .env
 
-### IntelliJ Terminal History ###
-*.history
-**/terminal/history/*
+# Logs
+logs/
+*.log

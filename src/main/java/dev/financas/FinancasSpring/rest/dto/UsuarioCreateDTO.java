@@ -1,6 +1,7 @@
 package dev.financas.FinancasSpring.rest.dto;
 
 import lombok.Data;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
@@ -33,4 +34,6 @@ public class UsuarioCreateDTO {
     @Builder.Default
     private Usuario.Role role = Usuario.Role.USER;
 
+    @Valid
+    private UsuarioDetalhesCreateDTO detalhes;
 }

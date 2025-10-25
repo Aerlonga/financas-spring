@@ -31,6 +31,11 @@ public class UsuarioService {
                 .orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado com o ID: " + id));
     }
 
+    public Usuario findByEmailComTudo(String email) {
+        return usuarioRepository.findWithAllRelationsByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado com o e-mail: " + email));
+    }
+
     public Usuario save(Usuario usuario) {
         if (usuarioRepository.existsByEmail(usuario.getEmail())) {
             throw new BusinessException("O e-mail informado já está em uso.");
