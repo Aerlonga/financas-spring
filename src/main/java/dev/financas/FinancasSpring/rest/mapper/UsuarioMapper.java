@@ -41,14 +41,17 @@ public class UsuarioMapper {
         if (dto.getDetalhes() != null) {
             UsuarioDetalhes detalhes = usuarioDetalhesMapper.toEntity(dto.getDetalhes());
             usuario.setDetalhes(detalhes);
+            detalhes.setUsuario(usuario);
         }
         if (dto.getFinanceiro() != null) {
             UsuarioFinanceiro financeiro = usuarioFinanceiroMapper.toEntity(dto.getFinanceiro());
             usuario.setFinanceiro(financeiro);
+            financeiro.setUsuario(usuario);
         }
         if (dto.getPreferencias() != null) {
             UsuarioPreferencias preferencias = usuarioPreferenciasMapper.toEntity(dto.getPreferencias());
             usuario.setPreferencias(preferencias);
+            preferencias.setUsuario(usuario);
         }
 
         return usuario;
@@ -96,12 +99,9 @@ public class UsuarioMapper {
             usuario.setRole(dto.getRole());
         }
 
-        // Atualiza as entidades relacionadas, se os DTOs de atualização forem
-        // fornecidos
         if (dto.getDetalhes() != null && usuario.getDetalhes() != null) {
             usuarioDetalhesMapper.updateEntity(usuario.getDetalhes(), dto.getDetalhes());
         } else if (dto.getDetalhes() != null && usuario.getDetalhes() == null) {
-            // Se não existia e foi fornecido no update, cria uma nova entidade de detalhes
             usuario.setDetalhes(usuarioDetalhesMapper.toEntity(dto.getDetalhes()));
         }
         if (dto.getFinanceiro() != null && usuario.getFinanceiro() != null) {

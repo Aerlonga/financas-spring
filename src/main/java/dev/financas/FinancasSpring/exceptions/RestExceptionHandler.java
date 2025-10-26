@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -66,13 +67,32 @@ public class RestExceptionHandler {
                 return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
         }
 
+        @ExceptionHandler(DataIntegrityViolationException.class)
+        public ResponseEntity<ApiErrorDTO> handleDataIntegrityViolationException(DataIntegrityViolationException ex,
+                        HttpServletRequest request) {
+                String message = "Erro de integridade de dados. Pode ser um valor duplicado (como e-mail ou CPF) ou uma referência a uma entidade inexistente.";
+                if (ex.getMostSpecificCause() != null) {
+                        message = ex.getMostSpecificCause().getMessage();
+                }
+                ApiErrorDTO error = ApiErrorDTO.builder()
+                                .timestamp(LocalDateTime.now())
+                                .status(HttpStatus.CONFLICT.value())
+                                .error("Data Integrity Violation")
+                                .message(message)
+                                .build();
+                return new ResponseEntity<>(error, HttpStatus.CONFLICT);
+        }
+
         @ExceptionHandler(Exception.class)
         public ResponseEntity<ApiErrorDTO> handleGenericException(Exception ex, HttpServletRequest request) {
+                String message = (ex instanceof IllegalStateException)
+                                ? ex.getMessage()
+                                : "Ocorreu um erro inesperado no servidor.";
                 ApiErrorDTO error = ApiErrorDTO.builder()
                                 .timestamp(LocalDateTime.now())
                                 .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
                                 .error("Internal Server Error")
-                                .message("Ocorreu um erro inesperado no servidor.")
+                                .message(message)
                                 .build();
                 return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
         }

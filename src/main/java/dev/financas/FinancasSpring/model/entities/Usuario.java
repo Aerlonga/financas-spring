@@ -3,26 +3,23 @@ package dev.financas.FinancasSpring.model.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.NaturalId;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
-@Getter
-@Setter
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
+@Setter
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "usuarios", indexes = {
         @Index(name = "idx_usuario_email", columnList = "email")
@@ -68,17 +65,53 @@ public class Usuario implements UserDetails {
     @Column(name = "atualizado_por")
     private String atualizadoPor;
 
+    @Setter(AccessLevel.NONE)
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonIgnore
     private UsuarioDetalhes detalhes;
 
+    @Setter(AccessLevel.NONE)
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonIgnore
     private UsuarioFinanceiro financeiro;
 
+    @Setter(AccessLevel.NONE)
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonIgnore
     private UsuarioPreferencias preferencias;
+
+    public void setDetalhes(UsuarioDetalhes detalhes) {
+        if (detalhes == null) {
+            if (this.detalhes != null) {
+                this.detalhes.setUsuario(null);
+            }
+        } else {
+            detalhes.setUsuario(this);
+        }
+        this.detalhes = detalhes;
+    }
+
+    public void setFinanceiro(UsuarioFinanceiro financeiro) {
+        if (financeiro == null) {
+            if (this.financeiro != null) {
+                this.financeiro.setUsuario(null);
+            }
+        } else {
+            financeiro.setUsuario(this);
+        }
+        this.financeiro = financeiro;
+    }
+
+    public void setPreferencias(UsuarioPreferencias preferencias) {
+        if (preferencias == null) {
+            if (this.preferencias != null) {
+                this.preferencias.setUsuario(null);
+            }
+        } else {
+            preferencias.setUsuario(this);
+        }
+        this.preferencias = preferencias;
+    }
 
     public enum Status {
         ATIVO, INATIVO, BLOQUEADO

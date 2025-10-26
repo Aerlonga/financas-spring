@@ -54,10 +54,9 @@ public class UsuarioDetalhesService {
             usuarioDetalhesMapper.updateEntity(detalhes, dto);
         }
 
-        // Salva a entidade Usuario, e o CascadeType.ALL cuidará de salvar/atualizar
-        // UsuarioDetalhes
-        usuarioRepository.save(usuario);
-
-        return detalhes;
+        // Salva a entidade de detalhes diretamente para garantir que a FK seja
+        // definida.
+        // O CascadeType.ALL no Usuario garante que o estado permaneça consistente.
+        return usuarioDetalhesRepository.save(detalhes);
     }
 }
