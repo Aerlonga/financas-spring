@@ -69,7 +69,6 @@ public class UsuarioMapper {
                 .criadoPor(usuario.getCriadoPor())
                 .atualizadoEm(usuario.getAtualizadoEm())
                 .atualizadoPor(usuario.getAtualizadoPor())
-                // Mapeia as entidades relacionadas para seus respectivos DTOs de resposta
                 .detalhes(usuario.getDetalhes() != null
                         ? usuarioDetalhesMapper.toResponseDTO(usuario.getDetalhes())
                         : null)
